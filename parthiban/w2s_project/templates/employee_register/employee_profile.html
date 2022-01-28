@@ -1,0 +1,57 @@
+{% extends "employee_register/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<form action="{% url 'skill_details' %}" method="post" autocomplete="off">
+    {% csrf_token %}
+    <table class="table" id="mytable_1">
+        <thead>
+            <tr>
+                <th scope="col">SKILL</th>
+                <th scope="col">PERCENTAGE</th>
+            </tr>
+        </thead>
+        
+        <tbody id="add_row_for_experience_details">
+            <tr>
+                <td><input type="text"  class="form-control" id="field1" name="skill"></td>
+                <td>  <input type="number" class="form-control" name="percentage" min="1" max="100"></td>
+                <input type="hidden" id="custId" name="skill_len">
+                <input type="hidden" id="custId" name="employee_id" value={{employee_id}}>
+
+            </tr>
+        </tbody> 
+              
+    </table>
+    <div style="float: right"> 
+        <button class="btn btn-primary" type="button" id="button_add_row_exp_details">ADD</button>
+    </div> 
+    <button type="submit" class="btn btn-success waves-effect waves-light">Submit</button>
+</form>
+
+{% endblock content %}
+{% block js %}
+    <script>    
+                    
+        $(function(){
+        var j = 0;
+        $('#button_add_row_exp_details').click(function(){
+            j++;
+            boun = '<tr class="remove_class" id="exp_remove'+j+'"><td><input type="text"  class="form-control" name="skill'+j+'"  ></td><td><input type="number" class="form-control" min="0" max="100" name="percentage'+j+'"  ></td></tr>';
+            $('#add_row_for_experience_details').append(boun);
+            $("#skill_len").val(j);
+        });
+        $(document).on('click', '.exp_remove_button',function(){
+            var button_id=$(this).attr("id");
+        
+            $("#exp_remove"+button_id).remove();
+            
+            document.getElementById("demo").innerHTML = button_id;
+            
+        });
+        
+    });
+
+    </script>
+{% endblock js %}

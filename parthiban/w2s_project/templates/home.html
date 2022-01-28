@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="http://mayagreens.net/static/images/favicon.ico">
+
+        <!-- jvectormap -->
+        <link href="http://mayagreens.net/static/plugins/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+
+        <!-- App css -->
+        <link href="http://mayagreens.net/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="http://mayagreens.net/static/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <link href="http://mayagreens.net/static/css/metisMenu.min.css" rel="stylesheet" type="text/css" />
+        <link href="http://mayagreens.net/static/plugins/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+        <link href="http://mayagreens.net/static/css/app.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="http://mayagreens.net/static/mobile_number/build/css/intlTelInput.css">
+        <link rel="stylesheet" href="http://mayagreens.net/static/mobile_number/build/css/demo.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        {% block css_file %}
+        {% endblock css_file  %}
+    </head>
+
+    <body class="dark-sidenav">
+        
+
+        {% include 'leftside-env.html'%}
+        
+
+        <div class="page-wrapper">
+            {% include 'top-nav.html'%}
+
+            <!-----------body file -->
+            {% block content %}
+            {% endblock content %}
+            <!-------------end body file--->
+
+        </div>
+        <!-- end page-wrapper -->
+
+        <!-- jQuery  -->
+        <script src="http://mayagreens.net/static/js/jquery.min.js"></script>
+        <script src="http://mayagreens.net/static/js/bootstrap.bundle.min.js"></script>
+        <script src="http://mayagreens.net/static/js/metismenu.min.js"></script>
+        <script src="http://mayagreens.net/static/js/waves.js"></script>
+        <script src="http://mayagreens.net/static/js/feather.min.js"></script>
+        <script src="http://mayagreens.net/static/js/simplebar.min.js"></script>
+        <script src="http://mayagreens.net/static/js/moment.js"></script>
+        <script src="http://mayagreens.net/static/plugins/daterangepicker/daterangepicker.js"></script>
+        
+        <script src="http://mayagreens.net/static/plugins/apex-charts/apexcharts.min.js"></script>
+        <script src="http://mayagreens.net/static/plugins/jvectormap/jquery-jvectormap-2.0.2.min.js"></script>
+        <script src="http://mayagreens.net/static/plugins/jvectormap/jquery-jvectormap-us-aea-en.js"></script>
+        <script src="http://mayagreens.net/static/pages/jquery.analytics_dashboard.init.js"></script>
+
+        <!-- App js -->
+        <script src="http://mayagreens.net/static/js/app.js"></script>
+
+        <script src="http://mayagreens.net/static/mobile_number/build/js/intlTelInput.js"></script>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <script>
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+     
+      utilsScript: "http://mayagreens.net/static/mobile_number/build/js/utils.js",
+    });
+  </script>
+
+        {% block js_file %}
+        {% endblock js_file  %}
+        
+    </body>
+
+
+</html>

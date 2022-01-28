@@ -1,0 +1,29 @@
+{% load static %}
+  <!-- Left Sidenav -->
+        <div class="left-sidenav">
+            <!-- LOGO -->
+            <div class="brand">
+                <a href="index.html" class="logo">
+                   
+                    <!-- <span> -->
+                        <!-- <label>MAYAGREENS</label> -->
+                        <!-- <img src="http://mayagreens.net/static/logo.png" alt="logo-large" class="logo-dark">
+                    </span> -->
+                </a>
+            </div>
+            <!--end logo-->
+            <div class="menu-content h-100" data-simplebar>
+                <ul class="metismenu left-sidenav-menu">
+                    <li>
+                        <a href="{% url 'home' %}"> <span>Dashboard</span><span class="menu-arrow"></span></a>
+                    </li>
+                    
+                            <li>
+                                <a href="{% url 'employee_list'%}"><i class="ti-control-record"></i><span>Employee Details</span></a>
+        
+                            </li>
+                           
+                </ul>
+            </div>
+        </div> 
+        <!-- end left-sidenav-->
